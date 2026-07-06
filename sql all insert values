@@ -1,0 +1,30 @@
+-- Create table
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50)
+);
+
+-- Add new columns
+ALTER TABLE students ADD age INT;
+
+ALTER TABLE students
+ADD dept VARCHAR(100),
+ADD gen CHAR(10);
+
+-- Insert full row (all columns)
+INSERT INTO students (id, name, age, dept, gen)
+VALUES (100, 'Sara', 21, 'Information Technology', 'Male');
+
+-- Insert partial row (other columns become NULL automatically)
+INSERT INTO students (id, name, age)
+VALUES (200, 'Sudar', 23);
+
+-- Insert multiple rows (including NULL values)
+INSERT INTO students (id, name, age, dept, gen)
+VALUES 
+(101, 'Ram', 20, 'CSE', 'Male'),
+(102, 'Priya', 22, 'IT', 'Female'),
+(103, 'Kavi', NULL, NULL, NULL);
+
+-- View table data
+SELECT * FROM students;
