@@ -1,0 +1,44 @@
+from tkinter import *
+import mysql.connector
+
+root = Tk()
+root.geometry("500x450")
+root.title("Student Marks")
+
+# Name
+l1 = Label(root, text="Name:")
+l1.pack(pady=5)
+
+e1 = Entry(root)
+e1.pack(pady=5)
+
+# Marks
+l2 = Label(root, text="Marks:")
+l2.pack(pady=5)
+
+e2 = Entry(root)
+e2.pack(pady=5)
+
+# Functions
+def add_student():
+    name = e1.get()
+    marks = e2.get()
+    print("Name:", name, "Marks:", marks)
+    # Add MySQL code here
+
+def show_avg():
+    print("Show Average")
+    # Average calculation code here
+
+# Buttons
+btn_add = Button(root, text="Add", command=add_student)
+btn_add.pack(pady=5)
+
+btn_avg = Button(root, text="Show Avg", command=show_avg)
+btn_avg.pack(pady=5)
+
+# Result Label
+l4 = Label(root, text="")
+l4.pack(pady=10)
+
+root.mainloop()
